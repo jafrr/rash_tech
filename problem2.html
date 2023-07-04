@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Wall Tile</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .announcement-bar {
+      background-color: rgb(229, 129, 179);
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .container {
+      display: flex;
+      gap: 40px;
+    }
+
+    .product-image {
+      flex: 1;
+      padding: 20px;
+      background-color: pink;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .product-image img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+
+    .wall-tile {
+      flex: 1;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .walltile label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .walltile button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      cursor: pointer;
+      margin-top: 20px;
+      font-size: 16px;
+      border-radius: 5px;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      background-color: #333;
+      color: white;
+      padding: 10px;
+    }
+
+    .nav-container .navbar-menu {
+      display: flex;
+      gap: 10px;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-container .navbar-menu li a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .search-bar {
+      display: flex;
+      align-items: center;
+    }
+
+    .search-bar input[type="text"] {
+      padding: 5px;
+    }
+
+    .search-bar button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+
+    .size-buttons {
+      display: flex;
+      gap: 13px;
+      margin-bottom: 20px;
+    }
+
+    .size-buttons button {
+      background-color: #ccc;
+      color: #333;
+      border: none;
+      padding: 8px 16px;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 5px;
+    }
+
+    .size-buttons button.selected {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    .price {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .nosale-price{
+        font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-decoration: line-through;
+
+    }
+
+    .sale-price {
+      color: rgb(53, 51, 51);
+    }
+
+    
+    select, input[type="number"] {
+      width: 100%;
+      padding: 25px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+   
+
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    input[type="number"]::-moz-inner-spin-button,
+    input[type="number"]::-moz-outer-spin-button {
+      -moz-appearance: none;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="nav-container">
+    <ul class="navbar-menu">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Collection</a></li>
+      <li><a href="#">Design</a></li>
+      <li><a href="#">Blogs</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+
+    <div class="search-bar">
+      <input type="text" placeholder="Search...">
+      <button type="button">Search</button>
+    </div>
+  </div>
+
+  <div class="announcement-bar">
+    <p>Announcement: Enjoy 20% off on all products this week!</p>
+  </div>
+
+  <div class="container">
+    <div class="product-image">
+      <img src="https://images.unsplash.com/photo-1531685250784-7569952593d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2FsbHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60" alt="Product Image">
+    </div>
+
+    <div class="wall-tile">
+      <h1>Wall tiles</h1>
+
+      <div class="walltile-options">
+        <div class="size-buttons">
+          <button class="size-button selected" data-size="small">Small</button>
+          <button class="size-button" data-size="medium">Medium</button>
+          <button class="size-button" data-size="large">Large</button>
+        </div>
+
+        <div>
+          <label for="fabric">Fabric:</label>
+          <select id="fabric">
+            <option value="cotton">Cotton</option>
+            <option value="polyester">Polyester</option>
+            <option value="silk">Silk</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="design">Design:</label>
+          <select id="design">
+            <option value="pattern">Pattern</option>
+            <option value="logo">Logo</option>
+            <option value="text">Text</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="quantity">Quantity:</label>
+          <input type="number" id="quantity" min="1" value="1">
+        </div>
+
+        <div class="price">
+            <span class="nosale-price">1000 </span>
+          <span class="sale-price">500 Rs (Sale)</span>
+        </div>
+
+        <button type="button">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
